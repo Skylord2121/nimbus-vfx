@@ -237,7 +237,7 @@ Completed on August 2, 2026.
 
 - Source repo: `Skylord2121/nimbus-vfx`.
 - Production domain verified: `https://nimbusvfx.com`.
-- Current production commit: `2f10ecb`.
+- Verified application build commit: `2f10ecb`.
 - Deployment path: GitHub push to `main` triggers GitHub Actions, which builds and deploys the linked Vercel production project.
 - Direct Vercel Git App linking was blocked by Vercel/GitHub integration access, so the production bridge is implemented through a repo-owned GitHub Actions workflow with Vercel project secrets.
 - App source is now React + TypeScript + Tailwind/Vite with reusable layout, navigation, footer, button, brand strip, video, home, clients, project, client detail, and legal page components.
