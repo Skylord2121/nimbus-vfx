@@ -6,8 +6,28 @@ export type Route =
   | { name: 'legal'; slug: string }
   | { name: 'not-found' }
 
-export function resolveRoute(pathname: string): Route {
+export function normalizeLegacyPathname(pathname: string): string {
   const path = pathname.replace(/\/+$/, '') || '/'
+
+  const aliases: Record<string, string> = {
+    '/index.html': '/',
+    '/clients.html': '/clients',
+    '/projects.html': '/projects',
+    '/portfolio.html': '/portfolio',
+    '/client-intellibus.html': '/client-intellibus',
+    '/client-watchanish.html': '/client-watchanish',
+    '/client-helene.html': '/client-helene',
+    '/privacy-policy.html': '/privacy-policy',
+    '/terms-of-use.html': '/terms-of-use',
+    '/security.html': '/security',
+    '/cookie-policy.html': '/cookie-policy',
+  }
+
+  return aliases[path] ?? path
+}
+
+export function resolveRoute(pathname: string): Route {
+  const path = normalizeLegacyPathname(pathname)
 
   if (path === '/') return { name: 'home' }
   if (path === '/clients') return { name: 'clients' }
