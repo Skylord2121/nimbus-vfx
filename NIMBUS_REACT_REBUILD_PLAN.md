@@ -231,15 +231,29 @@ Each project should include:
 - Components are reusable and content is typed.
 - No future design work needs direct edits to generated HTML.
 
-## Immediate Next Actions
+## Execution Status
 
-1. Confirm or switch GitHub CLI to `Skylord2121`.
-2. Create the React/Vite/Tailwind project in a clean source directory.
-3. Move current assets into the app.
-4. Port global design tokens.
-5. Build shared layout components.
-6. Recreate the current home page.
-7. Run local QA against the current live screenshots.
-8. Create the Skylord-owned GitHub repository and push.
-9. Link Vercel to the GitHub repo.
-10. Deploy from GitHub and verify `nimbusvfx.com`.
+Completed on August 2, 2026.
+
+- Source repo: `Skylord2121/nimbus-vfx`.
+- Production domain verified: `https://nimbusvfx.com`.
+- Current production commit: `2f10ecb`.
+- Deployment path: GitHub push to `main` triggers GitHub Actions, which builds and deploys the linked Vercel production project.
+- Direct Vercel Git App linking was blocked by Vercel/GitHub integration access, so the production bridge is implemented through a repo-owned GitHub Actions workflow with Vercel project secrets.
+- App source is now React + TypeScript + Tailwind/Vite with reusable layout, navigation, footer, button, brand strip, video, home, clients, project, client detail, and legal page components.
+- Static route fallback files are emitted during build so every public URL works without `.html` paths on production.
+- Verified live routes on desktop and mobile: `/`, `/clients`, `/client-intellibus`, `/client-watchanish`, `/client-helene`, `/projects`, `/portfolio`, `/privacy-policy`, `/terms-of-use`, `/security`, and `/cookie-policy`.
+- Production QA passed: no Vercel 404s, no broken images, no horizontal overflow, and mobile drawer opens without layout overflow.
+
+## Completed Execution Checklist
+
+- [x] Confirm or switch GitHub CLI to `Skylord2121`.
+- [x] Create the React/Vite/Tailwind project in a clean source directory.
+- [x] Move current assets into the app.
+- [x] Port global design tokens.
+- [x] Build shared layout components.
+- [x] Recreate the current home page.
+- [x] Run local QA against the current live screenshots.
+- [x] Create the Skylord-owned GitHub repository and push.
+- [x] Connect GitHub commits to Vercel production deployment through GitHub Actions.
+- [x] Deploy from GitHub and verify `nimbusvfx.com`.
