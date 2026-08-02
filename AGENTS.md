@@ -19,8 +19,9 @@ These instructions apply to all Nimbus VFX website work in this workspace.
 
 ## Deployment
 
-- NimbusVFX.com must deploy from the Skylord-owned GitHub repository through Vercel.
-- Keep Vercel connected to the GitHub repo so production deploys are traceable to commits.
+- NimbusVFX.com must deploy from the Skylord-owned GitHub repository through Netlify.
+- Do not create, link, or deploy Nimbus production work through Vercel.
+- Keep Netlify connected to the GitHub repo so production deploys are traceable to commits.
 - Do not manually patch production output as the normal workflow once the React app is established.
 
 ## QA

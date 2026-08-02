@@ -12,7 +12,7 @@ This repo replaces the previous manual static HTML deployment workflow with a Re
 - Tailwind CSS
 - Lucide React
 - Motion-ready component structure
-- Vercel deployment
+- Netlify deployment
 
 ## Commands
 
@@ -44,7 +44,7 @@ Do not create or connect Nimbus production work under `danielcallaghan`.
 - `src/components`: reusable UI primitives and shared site components.
 - `src/pages`: route-level pages.
 - `public/assets`: production imagery, logos, thumbnails, fonts, and generated backgrounds.
-- `vercel.json`: clean URL and security header configuration.
+- `netlify.toml`: build settings, SPA redirects, cache headers, and security headers.
 
 ## Public Routes
 

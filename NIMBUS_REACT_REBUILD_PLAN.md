@@ -2,11 +2,11 @@
 
 ## Goal
 
-Rebuild NimbusVFX.com as a proper Skylord2121-owned GitHub project using React, TypeScript, Tailwind, reusable components, and Vercel Git deployment, while preserving the current live design one-to-one before making new design improvements.
+Rebuild NimbusVFX.com as a proper Skylord2121-owned GitHub project using React, TypeScript, Tailwind, reusable components, and Netlify deployment, while preserving the current live design one-to-one before making new design improvements.
 
 ## Committed Execution Goal
 
-Build the new Nimbus VFX production source as a Skylord2121-owned React + TypeScript + Tailwind app, migrate the current live site into reusable components with one-to-one visual parity, connect the Skylord GitHub repo to the existing Vercel project, and make `nimbusvfx.com` deploy from GitHub instead of manual static HTML output.
+Build the new Nimbus VFX production source as a Skylord2121-owned React + TypeScript + Tailwind app, migrate the current live site into reusable components with one-to-one visual parity, connect the Skylord GitHub repo to Netlify, and make `nimbusvfx.com` deploy from GitHub instead of manual static HTML output.
 
 This goal is active until the React app is the production source of truth and all public routes are verified on desktop and mobile.
 
@@ -16,16 +16,14 @@ This goal is active until the React app is the production source of truth and al
 - Production domain: `nimbusvfx.com`.
 - Source of truth: React app, not standalone HTML files.
 - Visual target: match the current live site first, then refine.
-- Deployment model: GitHub commit -> Vercel build -> production domain.
+- Deployment model: GitHub commit -> Netlify build -> production domain.
 - QA model: desktop and mobile visual passes through the in-app browser/CDP, plus route and asset checks.
 
 ## Current State
 
-- The live site is deployed through Vercel from `deploy/nimbus-vfx`.
+- The live site is being migrated from the previous Vercel project to Netlify.
 - The current build is static HTML/CSS with assets copied from `outputs/`.
-- `nimbusvfx.com` is already aliased to the Vercel project named `nimbus-vfx`.
-- The current Vercel project metadata lives at `deploy/nimbus-vfx/.vercel/project.json`.
-- The Vercel project id is `prj_By0Akh1rOOUTeTQh03sqA5F6URtz`.
+- Netlify authentication must be active before the production project can be created and attached to `nimbusvfx.com`.
 - The current global git identity is not the desired Nimbus identity, so local repo identity must be configured deliberately before commits.
 
 ## GitHub And Repo Setup
@@ -35,7 +33,7 @@ This goal is active until the React app is the production source of truth and al
 3. Initialize a real project root with git tracking.
 4. Set local git identity for the Nimbus repo only.
 5. Push the initial React app to `Skylord2121/nimbus-vfx`.
-6. Connect the Vercel project to that GitHub repo.
+6. Connect a Netlify project to that GitHub repo.
 7. Confirm `nimbusvfx.com` production deploys from the repo, not from manual output uploads.
 
 ## Recommended App Stack
@@ -213,7 +211,7 @@ Each project should include:
 
 ### Production
 
-- Vercel deployment from GitHub commit.
+- Netlify deployment from GitHub commit.
 - `nimbusvfx.com` resolves to latest production deployment.
 - Same desktop and mobile screenshots from live domain.
 - Route checks for every public URL.
@@ -223,8 +221,8 @@ Each project should include:
 ## Definition Of Done
 
 - The React project lives in a Skylord2121 GitHub repository.
-- Vercel production deploys from that GitHub repository.
-- NimbusVFX.com points to the Vercel production deployment.
+- Netlify production deploys from that GitHub repository.
+- NimbusVFX.com points to the Netlify production deployment.
 - Current visual design is preserved one-to-one on desktop and mobile.
 - All public routes work without `.html` URLs.
 - The project can be developed with one local dev command.
@@ -238,12 +236,12 @@ Completed on August 2, 2026.
 - Source repo: `Skylord2121/nimbus-vfx`.
 - Production domain verified: `https://nimbusvfx.com`.
 - Verified application build commit: `2f10ecb`.
-- Deployment path: GitHub push to `main` triggers GitHub Actions, which builds and deploys the linked Vercel production project.
-- Direct Vercel Git App linking was blocked by Vercel/GitHub integration access, so the production bridge is implemented through a repo-owned GitHub Actions workflow with Vercel project secrets.
+- Deployment path: GitHub push to `main` should trigger a Netlify production build once the Netlify project is connected.
+- Previous Vercel deployment config has been removed from the React repo.
 - App source is now React + TypeScript + Tailwind/Vite with reusable layout, navigation, footer, button, brand strip, video, home, clients, project, client detail, and legal page components.
 - Static route fallback files are emitted during build so every public URL works without `.html` paths on production.
 - Verified live routes on desktop and mobile: `/`, `/clients`, `/client-intellibus`, `/client-watchanish`, `/client-helene`, `/projects`, `/portfolio`, `/privacy-policy`, `/terms-of-use`, `/security`, and `/cookie-policy`.
-- Production QA passed: no Vercel 404s, no broken images, no horizontal overflow, and mobile drawer opens without layout overflow.
+- Production QA passed on the previous host before migration; repeat production QA after Netlify is connected.
 
 ## Completed Execution Checklist
 
@@ -255,5 +253,5 @@ Completed on August 2, 2026.
 - [x] Recreate the current home page.
 - [x] Run local QA against the current live screenshots.
 - [x] Create the Skylord-owned GitHub repository and push.
-- [x] Connect GitHub commits to Vercel production deployment through GitHub Actions.
-- [x] Deploy from GitHub and verify `nimbusvfx.com`.
+- [ ] Connect GitHub commits to Netlify production deployment.
+- [ ] Deploy from Netlify and verify `nimbusvfx.com`.
