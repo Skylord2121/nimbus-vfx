@@ -9,15 +9,15 @@ export type BrandLogo = {
 
 export const navigation = [
   { label: 'Clients', href: '/clients' },
-  { label: 'Portfolio', href: '/projects' },
-  { label: 'Studio', href: '/#solution' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'About', href: '/#solution' },
   { label: 'Audit', href: '/#audit' },
 ]
 
 export const mobileNavigation = [
   { label: 'Clients', href: '/clients', description: 'Flagship transformations and proof systems.' },
-  { label: 'Portfolio', href: '/projects', description: 'Large previews of VFX, film, and content work.' },
-  { label: 'About Nimbus', href: '/#solution', description: 'How strategy, AI, production, and outreach connect.' },
+  { label: 'Projects', href: '/projects', description: 'Large previews of VFX, film, and content work.' },
+  { label: 'About', href: '/#solution', description: 'How strategy, AI, production, and outreach connect.' },
   { label: 'Audit', href: '/#audit', description: 'Find the leak before building the campaign.' },
 ]
 
